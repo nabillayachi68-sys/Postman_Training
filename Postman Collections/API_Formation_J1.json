@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "e1d813de-8275-4971-bbd4-4c6e84daa7c0",
+		"name": "API Formation J1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"id": "f4a18899-4481-4ba3-a140-47b2d099ead9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by ID",
+					"id": "ff190fae-1556-4629-b376-3cda4bc46736",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "a807a6df-999f-49c5-b4d8-e453186e15a6"
+		},
+		{
+			"name": "Posts",
+			"item": [],
+			"id": "e8a7bf71-309e-424b-a927-68208c7d59ad"
+		},
+		{
+			"name": "Auth",
+			"item": [],
+			"id": "c1e09bd1-a203-49ef-b6b0-5a5194c3acc2"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9cd89f15-cfe9-4bfa-a27b-0fba268caf4f",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f9f22584-f12f-4456-8dc5-2f4788fe6174",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "skip",
+			"value": ""
+		},
+		{
+			"key": "limit",
+			"value": ""
+		}
+	]
+}
