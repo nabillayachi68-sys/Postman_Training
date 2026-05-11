@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "da22291d-290b-4f43-86de-c21dab12d6bd",
+		"name": "Blog-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ALL POSTS",
+			"item": [
+				{
+					"name": "GET ALL POSTS",
+					"id": "237408b2-4203-40f9-af71-60a6d8e5c549",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/posts"
+					},
+					"response": []
+				}
+			],
+			"id": "e81c7863-ea86-4aa1-8352-3195145305b1"
+		},
+		{
+			"name": "POSTS by ID",
+			"item": [
+				{
+					"name": "GET Posts by Post ID",
+					"id": "dd681d64-1f81-44c1-8b1a-1df57a71c3ee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/posts/{{post_id}}"
+					},
+					"response": []
+				}
+			],
+			"id": "50b40176-23fd-4081-8c39-086348759477"
+		},
+		{
+			"name": "POST Comments by Post ID",
+			"item": [
+				{
+					"name": "GET Comments by Post ID",
+					"id": "92e666bd-c8cd-4323-9088-8987f4cd96bf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/posts/{{post_id}}/comments"
+					},
+					"response": []
+				}
+			],
+			"id": "50e273ae-f972-47b0-bea2-589c3596efab"
+		},
+		{
+			"name": "ADD POST",
+			"item": [
+				{
+					"name": "ADD POST",
+					"id": "f9712b29-e805-4a38-97be-5713e7cd38c4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"id\": 300,\r\n\"title\": \"test Post Postman formation Nabil\",\r\n\"body\": \"Nabil test post formation Postman .\",",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/{{post_path}}"
+					},
+					"response": []
+				}
+			],
+			"id": "fc87f400-6d8d-448b-ae85-e59c59d63a0e"
+		}
+	]
+}
