@@ -31,7 +31,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/todos/{{user_id}}"
+						"url": "{{base_url}}/todos/{{user_id}}",
+						"description": "## Todos By ID\n\nRetrieves a single todo item by its ID from the API.\n\n### HTTP Method & Endpoint\n\n```\nGET {{base_url}}/todos/{{user_id}}\n```\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `{{user_id}}` | The ID of the todo item to retrieve |\n\n### Expected Response\n\nReturns a JSON object representing the todo item with the following fields:\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `userId` | integer | The ID of the user who owns the todo |\n| `id` | integer | The unique ID of the todo item |\n| `title` | string | The title/description of the todo |\n| `completed` | boolean | Whether the todo has been completed |\n\n### Example Response\n\n```json\n{\n  \"userId\": 1,\n  \"id\": 5,\n  \"title\": \"laboriosam mollitia et enim quasi adipisci quia provident illum\",\n  \"completed\": false\n}\n```"
 					},
 					"response": []
 				},
@@ -53,7 +54,8 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/todos/{{post_path}}"
+						"url": "{{base_url}}/todos/{{post_path}}",
+						"description": "Creates a new todo item. Sends a POST request to the todos endpoint using the `{{base_url}}` and `{{post_path}}` variables.\n\n**Request Body (JSON):**\n- `userId` (integer): The ID of the user the todo belongs to.\n- `id` (integer): The unique identifier for the new todo item.\n- `title` (string): The title/description of the todo. Uses the `{{todo_title}}` variable.\n- `completed` (boolean): The completion status of the todo. Set to `false` for a newly created item.\n\n**Response:**\nReturns the created todo object with a `201 Created` status code."
 					},
 					"response": []
 				},
@@ -75,7 +77,8 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/todos/{{todo_id}}"
+						"url": "{{base_url}}/todos/{{todo_id}}",
+						"description": "## Complete todos Modification by ID\n\nThis request **fully replaces** an existing todo item identified by its ID, using the HTTP **PUT** method. Unlike a partial update (PATCH), a PUT request replaces the entire resource with the provided data.\n\n**Endpoint:** `PUT {{base_url}}/todos/{{todo_id}}`\n\n### Variables\n| Variable | Description |\n|---|---|\n| `{{base_url}}` | The base URL of the API (defined in the active environment) |\n| `{{todo_id}}` | The unique identifier of the todo item to be replaced |\n\n### Request Body (JSON)\n```json\n{\n  \"userId\": 56,\n  \"title\": \"Formation Postam Jour 2 Postman\",\n  \"completed\": true\n}\n```\n\n### Body Fields\n| Field | Type | Description |\n|---|---|---|\n| `userId` | integer | The ID of the user who owns the todo item |\n| `title` | string | The title/label of the todo item |\n| `completed` | boolean | Indicates whether the todo item is completed (`true`) or not (`false`) |\n\n### Expected Response\nOn success, the API returns the updated todo object with a `200 OK` status code."
 					},
 					"response": []
 				},
@@ -97,7 +100,8 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/todos/{{todo_id}}"
+						"url": "{{base_url}}/todos/{{todo_id}}",
+						"description": "## Partial todos Modification by ID\n\nThis request performs a **partial update** on a specific todo item using the HTTP `PATCH` method. Unlike `PUT`, `PATCH` allows you to update only the fields you provide, leaving the rest of the resource unchanged.\n\n---\n\n### Endpoint\n\n```\nPATCH {{base_url}}/todos/{{todo_id}}\n```\n\n### Variables\n\n| Variable | Description |\n|---|---|\n| `{{base_url}}` | The base URL of the API (defined in the active environment) |\n| `{{todo_id}}` | The unique identifier of the todo item to be partially updated |\n\n---\n\n### Request Body (raw JSON)\n\n```json\n{\n    \"userId\": 56,\n    \"title\": \"Formation Postam Jour 2 PostmanPostman finished\",\n    \"completed\": true\n}\n```\n\n| Field | Type | Description |\n|---|---|---|\n| `userId` | integer | The ID of the user who owns the todo item |\n| `title` | string | The updated title/description of the todo item |\n| `completed` | boolean | Indicates whether the todo item has been completed (`true`) or not (`false`) |\n\n---\n\n### Expected Response\n\n**Status:** `200 OK`\n\nThe response body contains the updated todo object reflecting the changes sent in the request body:\n\n```json\n{\n    \"userId\": 56,\n    \"id\": <todo_id>,\n    \"title\": \"Formation Postam Jour 2 PostmanPostman finished\",\n    \"completed\": true\n}\n```"
 					},
 					"response": []
 				},
