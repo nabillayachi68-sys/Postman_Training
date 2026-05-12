@@ -9,7 +9,7 @@
 			"name": "todos",
 			"item": [
 				{
-					"name": "todos ALL",
+					"name": "All todos Objects",
 					"id": "1e5ffdff-1843-4d8d-9c48-16aed3626f2c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -22,7 +22,7 @@
 					"response": []
 				},
 				{
-					"name": "todos by ID",
+					"name": "Object By ID",
 					"id": "d68ac538-f378-4bf2-9bee-a9cf7c37b2d1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -35,7 +35,7 @@
 					"response": []
 				},
 				{
-					"name": "Add todo by ID",
+					"name": "Create Object by ID",
 					"id": "8104f200-024e-43ba-8fb0-aa1ca54d6a56",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
