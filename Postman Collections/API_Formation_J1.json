@@ -35,7 +35,8 @@
 									"value": "{{limit}}"
 								}
 							]
-						}
+						},
+						"description": "## Get All Users\n\nRetrieves a paginated list of all users.\n\n**Method:** `GET`  \n**URL:** `{{base_url}}/users`\n\n### Query Parameters\n\n| Parameter | Description |\n|-----------|-------------|\n| `skip` | Number of records to skip (used for pagination) |\n| `limit` | Maximum number of records to return |\n\n### Example Response\n\nReturns an array of user objects.\n\n### Notes\n- Use `skip` and `limit` to paginate through the user list.\n- Ensure `base_url` is set in your active environment."
 					},
 					"response": []
 				},
@@ -48,7 +49,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/users/{{user_id}}"
+						"url": "{{base_url}}/users/{{user_id}}",
+						"description": "## Get User by ID\n\nRetrieves a single user by their unique identifier.\n\n**Method:** `GET`  \n**URL:** `{{base_url}}/users/{{user_id}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `user_id` | The unique ID of the user to retrieve |\n\n### Example Response\n\nReturns a single user object matching the provided `user_id`.\n\n### Notes\n- Ensure `base_url` and `user_id` are set in your active environment.\n- Returns a `404` if no user is found with the given ID."
 					},
 					"response": []
 				}
@@ -93,7 +95,8 @@
 							"value": "London,uk"
 						}
 					]
-				}
+				},
+				"description": "## London Weather\n\nFetches the current weather data for London, UK using the OpenWeatherMap API.\n\n**Method:** `GET`  \n**URL:** `https://api.openweathermap.org/data/2.5/weather?q=London,uk`\n\n### Query Parameters\n\n| Parameter | Description |\n|-----------|-------------|\n| `q` | City and country code query (e.g., `London,uk`) |\n\n### Example Response\n\nReturns a JSON object containing current weather conditions such as temperature, humidity, wind speed, and a weather description.\n\n### Notes\n- An API key (`appid`) may be required as a query parameter depending on your OpenWeatherMap plan.\n- Refer to the [OpenWeatherMap documentation](https://openweathermap.org/current) for full response details."
 			},
 			"response": []
 		}
