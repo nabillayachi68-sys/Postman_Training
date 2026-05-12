@@ -142,7 +142,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Partial Modification by ID",
 					"id": "0c2266d8-9a88-4a3f-8867-3ffed5f72a90",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -150,6 +150,28 @@
 					"request": {
 						"method": "GET",
 						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "034c150d-fc08-4d58-aa1b-55c1989b1538",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 56,\r\n    \"title\": \"Formation Postam Jour 2 PostmanPostman finished\",\r\n    \"completed\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/todos/{{todo_id}}"
 					},
 					"response": []
 				}
