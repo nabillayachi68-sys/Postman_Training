@@ -64,6 +64,38 @@
 			"name": "Auth",
 			"item": [],
 			"id": "c1e09bd1-a203-49ef-b6b0-5a5194c3acc2"
+		},
+		{
+			"name": "London Wheather",
+			"id": "50e03062-424c-4916-befb-24b8ccaa8880",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?q=London,uk",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
