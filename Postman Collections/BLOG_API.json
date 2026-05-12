@@ -129,7 +129,7 @@
 			"name": "Auth",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Dummy Jason Token",
 					"id": "8113131f-4a0f-4b83-a841-dd0507242974",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
