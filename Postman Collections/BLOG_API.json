@@ -9,7 +9,7 @@
 			"name": "todos",
 			"item": [
 				{
-					"name": "All todos Objects",
+					"name": "All todos",
 					"id": "1e5ffdff-1843-4d8d-9c48-16aed3626f2c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -22,7 +22,7 @@
 					"response": []
 				},
 				{
-					"name": "todos Object By ID",
+					"name": "todos By ID",
 					"id": "d68ac538-f378-4bf2-9bee-a9cf7c37b2d1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -35,7 +35,7 @@
 					"response": []
 				},
 				{
-					"name": "Create todos Object by ID",
+					"name": "Create todos by ID",
 					"id": "8104f200-024e-43ba-8fb0-aa1ca54d6a56",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -57,7 +57,7 @@
 					"response": []
 				},
 				{
-					"name": "Complete todos Object Modification by ID",
+					"name": "Complete todos Modification by ID",
 					"id": "4b9cc1d4-5f36-41b7-9e5b-50775a0e32f0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -79,7 +79,7 @@
 					"response": []
 				},
 				{
-					"name": "Partial todos Object Modification by ID",
+					"name": "Partial todos Modification by ID",
 					"id": "034c150d-fc08-4d58-aa1b-55c1989b1538",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -101,7 +101,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete todos Object by ID",
+					"name": "Delete todos by ID",
 					"id": "79b1bbf1-d9b5-478c-a8e9-83b6a5d96fb0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -159,7 +159,7 @@
 			"name": "Posts",
 			"item": [
 				{
-					"name": "GET ALL POSTS",
+					"name": "All Posts",
 					"id": "237408b2-4203-40f9-af71-60a6d8e5c549",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -191,7 +191,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Posts by Post ID",
+					"name": "Posts by ID",
 					"id": "dd681d64-1f81-44c1-8b1a-1df57a71c3ee",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -204,7 +204,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Comments by Post ID",
+					"name": "Comments by Post ID",
 					"id": "92e666bd-c8cd-4323-9088-8987f4cd96bf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
