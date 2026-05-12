@@ -89,6 +89,24 @@
 				}
 			],
 			"id": "fc87f400-6d8d-448b-ae85-e59c59d63a0e"
+		},
+		{
+			"name": "todos",
+			"item": [
+				{
+					"name": "todos ALL",
+					"id": "1e5ffdff-1843-4d8d-9c48-16aed3626f2c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "d2bd159f-b479-4dcc-953a-6911d30db5c6"
 		}
 	]
 }
