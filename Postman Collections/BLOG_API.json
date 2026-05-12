@@ -22,7 +22,7 @@
 					"response": []
 				},
 				{
-					"name": "Object By ID",
+					"name": "todos Object By ID",
 					"id": "d68ac538-f378-4bf2-9bee-a9cf7c37b2d1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -35,7 +35,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Object by ID",
+					"name": "Create todos Object by ID",
 					"id": "8104f200-024e-43ba-8fb0-aa1ca54d6a56",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -57,7 +57,7 @@
 					"response": []
 				},
 				{
-					"name": "Complete Modification by ID",
+					"name": "Complete todos Object Modification by ID",
 					"id": "4b9cc1d4-5f36-41b7-9e5b-50775a0e32f0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -79,7 +79,7 @@
 					"response": []
 				},
 				{
-					"name": "Partial Modification by ID",
+					"name": "Partial todos Object Modification by ID",
 					"id": "034c150d-fc08-4d58-aa1b-55c1989b1538",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -101,7 +101,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete by ID",
+					"name": "Delete todos Object by ID",
 					"id": "79b1bbf1-d9b5-478c-a8e9-83b6a5d96fb0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -196,18 +196,6 @@
 				}
 			],
 			"id": "dae801ce-b2a8-4ff0-9adf-c38ff18add85"
-		},
-		{
-			"name": "New Request",
-			"id": "0b6ebe7b-aab1-43e4-8206-94689b3f1a1a",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
 		}
 	]
 }
