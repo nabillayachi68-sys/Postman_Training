@@ -138,6 +138,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"url": "{{base_url}}/Users",
 						"description": "## All Users\n\nRetrieves a list of all users available in the system.\n\n**Method:** `GET`\n\n> ⚠️ No URL has been configured for this request yet. Set the `base_url` environment variable and update the endpoint (e.g., `{{base_url}}/users`) before sending.\n\n### Response\n\nExpected to return a JSON array of user objects, each containing fields such as `id`, `name`, `username`, `email`, and `address`."
 					},
 					"response": []
