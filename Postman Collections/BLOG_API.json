@@ -17,7 +17,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/todos"
+						"url": "{{base_url}}/todos",
+						"description": "Retrieves all todos from the API.\n\n**Method & Path:** `GET {{base_url}}/todos`\n\nThis endpoint returns a complete list of todo objects. The `{{base_url}}` environment variable must be set in the active environment (e.g., `https://dummyjson.com`).\n\n**Response**\n\nReturns a JSON object containing a `todos` array. Each todo object includes the following fields:\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `id` | integer | Unique identifier of the todo |\n| `todo` | string | The todo task description |\n| `completed` | boolean | Whether the todo has been completed |\n| `userId` | integer | ID of the user the todo belongs to |\n\n**Example Response:**\n```json\n{\n  \"todos\": [\n    { \"id\": 1, \"todo\": \"Do something nice for someone you care about\", \"completed\": false, \"userId\": 152 },\n    { \"id\": 2, \"todo\": \"Memorize a poem\", \"completed\": true, \"userId\": 13 }\n  ]\n}\n```"
 					},
 					"response": []
 				},
@@ -130,13 +131,40 @@
 			"item": [
 				{
 					"name": "Dummy Jason Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9748f36d-f464-42a6-883f-5103cf60eb38",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"pm.environment.set(\"jason_token\",responseJson.accessToken);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "8113131f-4a0f-4b83-a841-dd0507242974",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"alexanderj\",\r\n    \"password\": \"alexanderjpass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/login"
 					},
 					"response": []
 				},
@@ -148,7 +176,8 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{base_url}}/auth/me"
 					},
 					"response": []
 				}
@@ -217,7 +246,7 @@
 					"response": []
 				},
 				{
-					"name": "ADD POST",
+					"name": "Create Post",
 					"id": "f9712b29-e805-4a38-97be-5713e7cd38c4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -245,8 +274,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/posts/{{post_id}}"
 					},
 					"response": []
 				},
@@ -257,8 +287,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"His fatther had always taught him\",\r\n    \"body\": \"His father had always taught him not to ever think of himself as better than others. He'd tried to live by this motto. He never looked down on those who were less fortunate or who had less money than him. But the stupidity of the group of people he was talking to made him change his mind.\",\r\n    \"tags\": [\r\n        \"history\",\r\n        \"american\",\r\n        \"crime\",\r\n        \"fiction\"\r\n    ],\r\n    \"reactions\": {\r\n        \"likes\": 192,\r\n        \"dislikes\": 25\r\n    },\r\n    \"views\": 305,\r\n    \"userId\": 121\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/posts/{{post_id}}"
 					},
 					"response": []
 				},
@@ -269,8 +309,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"His fatther and mother  had always taught him\",\r\n    \"body\": \"His father and mother  had always taught him not to ever think of himself as better than others. He'd tried to live by this motto. He never looked down on those who were less fortunate or who had less money than him. But the stupidity of the group of people he was talking to made him change his mind.\",\r\n    \"tags\": [\r\n        \"history\",\r\n        \"american\",\r\n        \"crime\"\r\n        \r\n    ],\r\n    \"reactions\": {\r\n        \"likes\": 192,\r\n        \"dislikes\": 25\r\n    },\r\n    \"views\": 3005,\r\n    \"userId\": 111\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/posts/{{post_id}}"
 					},
 					"response": []
 				}
