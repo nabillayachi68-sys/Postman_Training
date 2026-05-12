@@ -139,6 +139,18 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "get auth me",
+					"id": "f7d465ad-65ae-49ca-bad0-758e4f2b0d8f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "14cb9b87-8ec5-432e-85ac-c09a45c640e5"
@@ -227,6 +239,38 @@
 				}
 			],
 			"id": "dae801ce-b2a8-4ff0-9adf-c38ff18add85"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{dummy_jason_token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "128f01b1-600e-48cb-9171-aa9f2576b108",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ff0bce60-d45f-47e4-a8be-6f12b0c3edac",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
