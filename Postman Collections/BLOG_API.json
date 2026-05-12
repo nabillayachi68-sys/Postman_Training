@@ -185,7 +185,8 @@
 									"value": "60"
 								}
 							]
-						}
+						},
+						"description": "Retrieves a list of all posts.\n\n**Method:** GET  \n**Endpoint:** `{{base_url}}/posts`\n\n**Response:**\n- **200 OK** – Returns a JSON object containing an array of post objects. Each post includes:\n  - `id` – Unique identifier of the post\n  - `title` – Title of the post\n  - `body` – Full text content of the post\n  - `tags` – Array of tags associated with the post\n  - `reactions` – Object containing `likes` and `dislikes` counts\n  - `views` – Number of views\n  - `userId` – ID of the user who created the post\n\n**Notes:**\n- Uses the `{{base_url}}` environment variable as the base URL.\n- No authentication or query parameters are required."
 					},
 					"response": []
 				},
