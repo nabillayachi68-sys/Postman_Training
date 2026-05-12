@@ -99,6 +99,51 @@
 				"description": "## London Weather\n\nFetches the current weather data for London, UK using the OpenWeatherMap API.\n\n**Method:** `GET`  \n**URL:** `https://api.openweathermap.org/data/2.5/weather?q=London,uk`\n\n### Query Parameters\n\n| Parameter | Description |\n|-----------|-------------|\n| `q` | City and country code query (e.g., `London,uk`) |\n\n### Example Response\n\nReturns a JSON object containing current weather conditions such as temperature, humidity, wind speed, and a weather description.\n\n### Notes\n- An API key (`appid`) may be required as a query parameter depending on your OpenWeatherMap plan.\n- Refer to the [OpenWeatherMap documentation](https://openweathermap.org/current) for full response details."
 			},
 			"response": []
+		},
+		{
+			"name": "{{base_url}}/posts",
+			"id": "94317ffd-9498-4edf-b3bf-f2f487129b53",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/posts?limit=30&skip=50&",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "30"
+						},
+						{
+							"key": "skip",
+							"value": "50"
+						},
+						{
+							"key": "",
+							"value": null,
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
