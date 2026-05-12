@@ -69,7 +69,7 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": {
-			"value": "e63b29b91067a8f50d92e93d06123fa5",
+			"value": "{{London_Weather}}",
 			"key": "X-API-Key"
 		}
 	},
@@ -77,7 +77,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "24f96d57-253c-4ea0-a450-4a02312630c7",
+				"id": "94605df8-94f4-4d8d-879a-d78397383b35",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -89,7 +89,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "79261b19-1dc2-4af7-b45e-945cf09a3e3d",
+				"id": "3f50afd3-e09b-48b6-b86e-a036bb735976",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
