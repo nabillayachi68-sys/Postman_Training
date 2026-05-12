@@ -237,6 +237,18 @@
 						"url": "{{base_url}}/posts{{post_path}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"id": "f9dc3171-9101-4bb7-8b39-d015e0a916a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "dae801ce-b2a8-4ff0-9adf-c38ff18add85"
