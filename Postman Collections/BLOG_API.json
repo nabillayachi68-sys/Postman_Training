@@ -244,14 +244,14 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "{{jason_token}}"
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJhbGV4YW5kZXJqIiwiZW1haWwiOiJhbGV4YW5kZXIuam9uZXNAeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiQWxleGFuZGVyIiwibGFzdE5hbWUiOiJKb25lcyIsImdlbmRlciI6Im1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2FsZXhhbmRlcmovMTI4IiwiaWF0IjoxNzc4NTg1NTA1LCJleHAiOjE3Nzg1ODkxMDV9.ehPBh2MJDqXOL9w-RgSpw0C0rmV4NZ9lUkWQOCgnu10"
 		}
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "96ac8429-10cb-4440-a1c4-d3ac1ba70615",
+				"id": "f9dfa176-7531-40d7-8b48-552c82a5f198",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -263,7 +263,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "648fe39e-fc94-49bd-a082-1a2f3f7239a2",
+				"id": "7f119adb-0530-4f9f-bfe9-5318ab52bdd2",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
