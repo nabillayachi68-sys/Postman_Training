@@ -118,7 +118,8 @@
 							"mode": "raw",
 							"raw": "{\r\n    \"userId\": 56,\r\n    \"title\": \"Formation Postam Jour 2 PostmanPostman finished\",\r\n    \"completed\": true\r\n}"
 						},
-						"url": "{{base_url}}/todos/{{todo_id}}"
+						"url": "{{base_url}}/todos/{{todo_id}}",
+						"description": "## Delete todos by ID\n\nDeletes a specific todo item by its unique identifier.\n\n**Method:** `DELETE`\n**Endpoint:** `{{base_url}}/todos/{{todo_id}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `todo_id` | The unique ID of the todo item to delete |\n\n### Response\n\nReturns an empty object `{}` or a `200 OK` status upon successful deletion."
 					},
 					"response": []
 				}
@@ -127,7 +128,21 @@
 		},
 		{
 			"name": "Users",
-			"item": [],
+			"item": [
+				{
+					"name": "All Users",
+					"id": "f00f4ac7-dc1a-4030-93d7-95f6af8045c9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "## All Users\n\nRetrieves a list of all users available in the system.\n\n**Method:** `GET`\n\n> ⚠️ No URL has been configured for this request yet. Set the `base_url` environment variable and update the endpoint (e.g., `{{base_url}}/users`) before sending.\n\n### Response\n\nExpected to return a JSON array of user objects, each containing fields such as `id`, `name`, `username`, `email`, and `address`."
+					},
+					"response": []
+				}
+			],
 			"id": "f4e83c44-123d-46b6-ab7d-3fe006c42920"
 		},
 		{
@@ -168,7 +183,8 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/auth/login"
+						"url": "{{base_url}}/auth/login",
+						"description": "## Dummy Jason Token\n\nAuthenticates a user and retrieves a JWT (JSON Web Token) for use in subsequent authenticated requests.\n\n**Method:** `POST`\n**Endpoint:** `{{base_url}}/auth/login`\n\n### Request Body\n\nSend a JSON object with user credentials:\n\n```json\n{\n  \"username\": \"your_username\",\n  \"password\": \"your_password\"\n}\n```\n\n### Response\n\nReturns a JSON object containing the access token:\n\n```json\n{\n  \"token\": \"<jwt_token>\"\n}\n```\n\nUse the returned token as a `Bearer` token in the `Authorization` header for protected endpoints."
 					},
 					"response": []
 				},
@@ -181,7 +197,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/auth/me"
+						"url": "{{base_url}}/auth/me",
+						"description": "## Get Auth Me\n\nRetrieves the profile information of the currently authenticated user.\n\n**Method:** `GET`\n**Endpoint:** `{{base_url}}/auth/me`\n\n### Authentication\n\nRequires a valid JWT token. Include it in the `Authorization` header:\n\n```\nAuthorization: Bearer <token>\n```\n\n### Response\n\nReturns a JSON object with the authenticated user's profile details, such as `id`, `username`, `email`, and `role`."
 					},
 					"response": []
 				}
@@ -232,7 +249,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/posts/{{post_id}}"
+						"url": "{{base_url}}/posts/{{post_id}}",
+						"description": "## Posts by ID\n\nRetrieves a single post by its unique identifier.\n\n**Method:** `GET`\n**Endpoint:** `{{base_url}}/posts/{{post_id}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `post_id` | The unique ID of the post to retrieve |\n\n### Response\n\nReturns a JSON object representing the post with the specified ID, including fields such as `id`, `title`, `body`, and `userId`."
 					},
 					"response": []
 				},
@@ -245,7 +263,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/posts/{{post_id}}/comments"
+						"url": "{{base_url}}/posts/{{post_id}}/comments",
+						"description": "## Comments by Post ID\n\nRetrieves all comments associated with a specific post.\n\n**Method:** `GET`\n**Endpoint:** `{{base_url}}/posts/{{post_id}}/comments`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `post_id` | The unique ID of the post whose comments are to be retrieved |\n\n### Response\n\nReturns a JSON array of comment objects for the given post. Each comment includes fields such as `id`, `postId`, `name`, `email`, and `body`."
 					},
 					"response": []
 				},
@@ -267,7 +286,8 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/posts{{post_path}}"
+						"url": "{{base_url}}/posts{{post_path}}",
+						"description": "## Create Post\n\nCreates a new post resource.\n\n**Method:** `POST`\n**Endpoint:** `{{base_url}}/posts{{post_path}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `post_path` | Optional path suffix for the post endpoint |\n\n### Request Body\n\nSend a JSON object with the post data. Typical fields include:\n\n```json\n{\n  \"title\": \"Post title\",\n  \"body\": \"Post content\",\n  \"userId\": 1\n}\n```\n\n### Response\n\nReturns the newly created post object, including the assigned `id`."
 					},
 					"response": []
 				},
@@ -280,7 +300,8 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{base_url}}/posts/{{post_id}}"
+						"url": "{{base_url}}/posts/{{post_id}}",
+						"description": "## Delete Post\n\nDeletes a specific post by its unique identifier.\n\n**Method:** `DELETE`\n**Endpoint:** `{{base_url}}/posts/{{post_id}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `post_id` | The unique ID of the post to delete |\n\n### Response\n\nReturns an empty object `{}` or a `200 OK` status upon successful deletion."
 					},
 					"response": []
 				},
@@ -302,7 +323,8 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/posts/{{post_id}}"
+						"url": "{{base_url}}/posts/{{post_id}}",
+						"description": "## Modify Post\n\nFully replaces an existing post with new data (full update).\n\n**Method:** `PUT`\n**Endpoint:** `{{base_url}}/posts/{{post_id}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `post_id` | The unique ID of the post to update |\n\n### Request Body\n\nSend a complete JSON object with all post fields:\n\n```json\n{\n  \"id\": 1,\n  \"title\": \"Updated title\",\n  \"body\": \"Updated content\",\n  \"userId\": 1\n}\n```\n\n### Response\n\nReturns the updated post object reflecting the new values."
 					},
 					"response": []
 				},
@@ -324,7 +346,8 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/posts/{{post_id}}"
+						"url": "{{base_url}}/posts/{{post_id}}",
+						"description": "## Partially Modify Post\n\nApplies a partial update to an existing post, modifying only the specified fields.\n\n**Method:** `PATCH`\n**Endpoint:** `{{base_url}}/posts/{{post_id}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `post_id` | The unique ID of the post to partially update |\n\n### Request Body\n\nSend a JSON object containing only the fields you wish to update:\n\n```json\n{\n  \"title\": \"New title only\"\n}\n```\n\n### Response\n\nReturns the updated post object with the modified fields applied."
 					},
 					"response": []
 				}
