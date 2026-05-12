@@ -244,14 +244,14 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "{{dummy_jason_token}}"
+			"token": "{{jason_token}}"
 		}
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "128f01b1-600e-48cb-9171-aa9f2576b108",
+				"id": "96ac8429-10cb-4440-a1c4-d3ac1ba70615",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -263,7 +263,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ff0bce60-d45f-47e4-a8be-6f12b0c3edac",
+				"id": "648fe39e-fc94-49bd-a082-1a2f3f7239a2",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
