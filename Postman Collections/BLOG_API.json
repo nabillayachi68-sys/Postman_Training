@@ -359,7 +359,8 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{base_url}}/posts/{{post_id}}/tags"
 					},
 					"response": []
 				}
