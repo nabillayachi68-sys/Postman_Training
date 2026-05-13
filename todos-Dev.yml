@@ -1,0 +1,25 @@
+name: Tests API Newman
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du Code
+        uses: actions/checkout@v4
+
+      - name: Installation Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Newman
+        run: npm install -g newman newman-reporter-htmlextra
+
+         # Make directory to upload the test results
+      - name: Make Directory for results
+        run: mkdir -p result
+
+      - name: ExÃ©cution des tests API
+        # Ensure your collection.json is in the repository
+        run: newman run ./Postman/End_to_End_Test_todos.json -e ./Postman/Dev_environment --reporters cli,htmlextra --reporter-htmlextra-export result/report.html
