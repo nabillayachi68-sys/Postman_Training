@@ -22,4 +22,4 @@ jobs:
 
       - name: ExÃ©cution des tests API
         # Ensure your collection.json is in the repository
-        run: newman run ./Postman/End_to_End_Test_todos.json -e ./Postman/Prod_environement --reporters cli,htmlextra --reporter-htmlextra-export result/report.html
+        run: newman run ./Postman/End_to_End_Test_todos.json -e ./Postman/Prod_environment --reporters cli,htmlextra --reporter-htmlextra-export result/report.html
