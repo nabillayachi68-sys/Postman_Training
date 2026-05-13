@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "f81ecb21-9353-4283-be2d-af30bdfb14b5",
+		"name": "End to End Test Todos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get todos By ID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9221b034-9be5-4306-9a5f-e7559b7ac373",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "380655d6-daec-4da3-bfe5-e37d4f439634",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/todos/{{user_id}}",
+				"description": "## Todos By ID\n\nRetrieves a single todo item by its ID from the API.\n\n### HTTP Method & Endpoint\n\n```\nGET {{base_url}}/todos/{{user_id}}\n```\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `{{user_id}}` | The ID of the todo item to retrieve |\n\n### Expected Response\n\nReturns a JSON object representing the todo item with the following fields:\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `userId` | integer | The ID of the user who owns the todo |\n| `id` | integer | The unique ID of the todo item |\n| `title` | string | The title/description of the todo |\n| `completed` | boolean | Whether the todo has been completed |\n\n### Example Response\n\n```json\n{\n  \"userId\": 1,\n  \"id\": 5,\n  \"title\": \"laboriosam mollitia et enim quasi adipisci quia provident illum\",\n  \"completed\": false\n}\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Get todos By ID Copy after delete",
+			"id": "ac9f6a3c-a4a7-4e2d-a09a-ed8941878a4b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/todos/{{user_id}}",
+				"description": "## Todos By ID\n\nRetrieves a single todo item by its ID from the API.\n\n### HTTP Method & Endpoint\n\n```\nGET {{base_url}}/todos/{{user_id}}\n```\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `{{user_id}}` | The ID of the todo item to retrieve |\n\n### Expected Response\n\nReturns a JSON object representing the todo item with the following fields:\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `userId` | integer | The ID of the user who owns the todo |\n| `id` | integer | The unique ID of the todo item |\n| `title` | string | The title/description of the todo |\n| `completed` | boolean | Whether the todo has been completed |\n\n### Example Response\n\n```json\n{\n  \"userId\": 1,\n  \"id\": 5,\n  \"title\": \"laboriosam mollitia et enim quasi adipisci quia provident illum\",\n  \"completed\": false\n}\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Create todos by ID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "62d46b0b-ca3a-48de-8a88-0349a1b7b2d9",
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Status 201 - Todo créé\", function () {\r",
+							"pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"L'id est retourné\", function () {\r",
+							"pm.expect(jsonData).to.have.property(\"id\");\r",
+							"});\r",
+							"pm.test(\"Le titre correspond\", function () {\r",
+							"pm.expect(jsonData[pm.environment.get(\"todo_title\")]).to.eql(\"Mon todo de test E2E\");\r",
+							"});\r",
+							"// Stocker l'id pour les requêtes suivantes\r",
+							"pm.environment.set(\"todo_id\", jsonData.id-1);\r",
+							"console.log(\"Todo ID = \", jsonData.id);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "c5437445-235d-4a8f-a746-e6d5f65c5dd8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": 5,\r\n        \"{{todo_title}}\": \"Mon todo de test E2E\",\r\n        \"completed\": false\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/todos/{{post_path}}",
+				"description": "Creates a new todo item. Sends a POST request to the todos endpoint using the `{{base_url}}` and `{{post_path}}` variables.\n\n**Request Body (JSON):**\n- `userId` (integer): The ID of the user the todo belongs to.\n- `id` (integer): The unique identifier for the new todo item.\n- `title` (string): The title/description of the todo. Uses the `{{todo_title}}` variable.\n- `completed` (boolean): The completion status of the todo. Set to `false` for a newly created item.\n\n**Response:**\nReturns the created todo object with a `201 Created` status code."
+			},
+			"response": []
+		},
+		{
+			"name": "Partial todos Modification by ID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a3ebb785-7909-402b-ad3a-acfea9b22e3d",
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Status 200 - Todo créé\", function () {\r",
+							"pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"de la modification du champ completed\", function () {\r",
+							"pm.expect(jsonData.completed).to.be.true;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "a3a5f407-660c-4aec-8be0-4b6a40570d02",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 56,\r\n    \"title\": \"Mon todo de test E2E\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/todos/{{todo_id}}",
+				"description": "## Partial todos Modification by ID\n\nThis request performs a **partial update** on a specific todo item using the HTTP `PATCH` method. Unlike `PUT`, `PATCH` allows you to update only the fields you provide, leaving the rest of the resource unchanged.\n\n---\n\n### Endpoint\n\n```\nPATCH {{base_url}}/todos/{{todo_id}}\n```\n\n### Variables\n\n| Variable | Description |\n|---|---|\n| `{{base_url}}` | The base URL of the API (defined in the active environment) |\n| `{{todo_id}}` | The unique identifier of the todo item to be partially updated |\n\n---\n\n### Request Body (raw JSON)\n\n```json\n{\n    \"userId\": 56,\n    \"title\": \"Formation Postam Jour 2 PostmanPostman finished\",\n    \"completed\": true\n}\n```\n\n| Field | Type | Description |\n|---|---|---|\n| `userId` | integer | The ID of the user who owns the todo item |\n| `title` | string | The updated title/description of the todo item |\n| `completed` | boolean | Indicates whether the todo item has been completed (`true`) or not (`false`) |\n\n---\n\n### Expected Response\n\n**Status:** `200 OK`\n\nThe response body contains the updated todo object reflecting the changes sent in the request body:\n\n```json\n{\n    \"userId\": 56,\n    \"id\": <todo_id>,\n    \"title\": \"Formation Postam Jour 2 PostmanPostman finished\",\n    \"completed\": true\n}\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete todos by ID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "16145389-51ea-4ac4-b081-f4099214d135",
+						"exec": [
+							"pm.test(\"Status 200 - Todo supprimé\", function () {\r",
+							"pm.response.to.have.status(200);\r",
+							"});\r",
+							"// Nettoyage de la variable d'environnement\r",
+							"pm.environment.set(\"todo_id\",parseInt(pm.environment.get(\"todo_id\"))+1);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "791be6f6-6fa1-4554-bf09-12b6f93b77a2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 56,\r\n    \"title\": \"Formation Postam Jour 2 PostmanPostman finished\",\r\n    \"completed\": true\r\n}"
+				},
+				"url": "{{base_url}}/todos/{{todo_id}}",
+				"description": "## Delete todos by ID\n\nDeletes a specific todo item by its unique identifier.\n\n**Method:** `DELETE`\n**Endpoint:** `{{base_url}}/todos/{{todo_id}}`\n\n### Path Variables\n\n| Variable | Description |\n|----------|-------------|\n| `todo_id` | The unique ID of the todo item to delete |\n\n### Response\n\nReturns an empty object `{}` or a `200 OK` status upon successful deletion."
+			},
+			"response": []
+		}
+	]
+}
