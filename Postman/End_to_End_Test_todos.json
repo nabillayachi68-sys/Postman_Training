@@ -11,9 +11,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9221b034-9be5-4306-9a5f-e7559b7ac373",
+						"id": "f3f11b93-e6bf-479d-9a1c-63f605f9b49b",
 						"exec": [
-							""
+							"pm.test(\"Status 200 - Todo trouvé\", function () {\r",
+							"pm.response.to.have.status(200)});"
 						],
 						"type": "text/javascript",
 						"packages": {},
